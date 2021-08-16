@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <img src="assets/images/bk1.jpg" class="card-img-top cardImg" alt="...">
+    <div class="card-body">
+        <h4 class="card-title">{{allBooks.title}}</h4>
+        <h6> {{allBooks.author}}</h6>
+        <p class="card-text">{{allBooks.category}}</p>
+        <p><strong>Price:</strong>{{allBooks.price | currency:'INR'}}</p>
+        <a class="btn btn-primary">Add to Cart</a>
+        <button type="button" class="btn btn-danger mx-4" (click)="delete()">Remove</button>
+    </div>
+</div>

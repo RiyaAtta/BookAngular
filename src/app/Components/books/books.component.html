@@ -1,0 +1,114 @@
+<!-- For adding icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/b7926f3752.js" crossorigin="anonymous"></script>
+
+<!-- External css adding: booksStyle.css -->
+<link rel="stylesheet" href="../books/books.component.css">
+
+<!-- Nav bar module -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/bookLogo1.webp" alt="" width="50" height="50" class="d-inline-block align-text-top">
+        </a>
+        <a class="navbar-brand" href="#">bookLodeon</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Browse Category
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Fiction</a></li>
+                        <li><a class="dropdown-item" href="#">Horror</a></li>
+                        <li><a class="dropdown-item" href="#">Romantic</a></li>
+                        <li><a class="dropdown-item" href="#">Suspence</a></li>
+                    </ul>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search by Category" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+            <!-- user icon -->
+            <div class="mx-2">
+                <div class="dropdown">
+                    <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">My orders</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">My review</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- cart icon -->
+            <div class="mx-2">
+                <button class="btn btn-primary" routerLink="/cart">
+                    <i style="font-size: 20px;" class="fas fa-cart-plus"></i>
+                    <!-- <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- for intro image and arrow -->
+<app-books-intro></app-books-intro>
+
+<!-- showing all books -->
+<div class="container" id="bestSellingBooks">
+    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="container headerClass">
+                <header>
+                    <h2>BestSelling Books</h2>
+                </header>
+            </div>
+            <div class="carousel-item active">
+                <div class="container" id="first">
+                    <div class="card" style="width: 18rem;">
+                        <app-all-books class="col-md-3" [allBooks]='b' (removed)="deleteBook(&event)"
+                        *ngFor="let b of allBooksList">
+
+
+                        </app-all-books>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+    <div class="my-4">
+        <app-footer></app-footer>
+    </div>
+
+
+    <!--<div class="card">
+    
+    
+    <div class="row">
+        <app-product class="col-md-3" [product]='p' (removed)= "deleteProduct($event)"
+        *ngFor="let p of productsList">
+        </app-product>
+      </div>
+    </div>
+     -->

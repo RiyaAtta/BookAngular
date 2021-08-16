@@ -1,0 +1,45 @@
+/* for displaying the cards in one line */
+#first{
+    display:flex;
+    justify-content:center;
+  }
+  
+  #second{
+    display:flex;
+    justify-content:center;
+  }
+  
+  #third{
+    display:flex;
+    justify-content:center;
+  }
+  
+  /* creating space between two cards */
+  .card{
+    margin-left: 2rem;
+  }
+
+/* styling the heading */
+.headerClass{
+    margin-left: 80px;
+    margin-bottom: 2rem;
+    margin-top: 7rem;
+    display: flex;
+    justify-content:left;
+  
+  }
+  
+  /* for adding animation in to the books */
+  .cardImg:hover{
+    transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+      
+  }
+  
+  .cardImg{
+    transition: 0.3s ease-in-out;
+    width: 250px;
+    height: 250px;
+    padding-left: 2rem;
+    padding-top: 2rem;
+  }
